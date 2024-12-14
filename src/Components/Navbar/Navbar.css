@@ -1,0 +1,117 @@
+/* Base Navbar Styles */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15 auto 15;
+    background-color:black;
+    color: #fff;
+    position:fixed;
+    top: -1;
+    z-index: 1000;
+    padding:20px;
+}
+
+.nav-logo {
+    font-family: cursive;
+    font-size: 35px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 0 10px #545252;
+}
+.nav-logo:hover {
+    color: #ff5858;
+    transform: scale(1.1); /* Slightly enlarges on hover */
+    text-shadow: 
+        2px 2px 8px rgba(0, 0, 0, 0.6), 
+        0 0 12px #a59b9b, 
+        0 0 20px #413d3d; /* Enhanced glow on hover */
+}
+.nav-menu {
+    display: flex;
+    gap:50px;
+    font-size: 25px;
+    list-style: none;
+    justify-content: space-evenly;
+    margin-right: 35px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-menu a {
+    font-size: 18px;
+    color:#ffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    font-family: cursive;
+    color: #ff5858;
+    transform: scale(1.1); /* Slightly enlarges on hover */
+    text-shadow: 
+        2px 2px 8px rgba(0, 0, 0, 0.6), 
+        0 0 12px #a59b9b, 
+        0 0 20px #413d3d; /* Enhanced glow on hover */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger Menu Open State (Close Icon) */
+.hamburger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0; /* Hide middle bar */
+}
+
+.hamburger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    .nav-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #4048db;
+        padding: 20px;
+        width: 100%;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-menu.show {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-menu a {
+        margin: 10px 0;
+    }
+}

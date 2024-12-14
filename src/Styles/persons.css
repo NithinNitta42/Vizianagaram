@@ -1,0 +1,92 @@
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px; 
+  padding-top: 50px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.section-heading {
+  font-size: 2rem; /* Large font size for prominence */
+  margin-top:20px;
+  font-weight: bold; /* Emphasize the text */
+  color: #333333; /* Dark gray color */
+  text-align: center;  /* Add spacing below the heading */
+  text-transform: uppercase; /* Make the text uppercase */
+  letter-spacing: 2px; /* Add some spacing between letters */ /* Add a bottom border for emphasis */
+  display: inline-block; /* Adjust border length to fit content */ /* Add some space between text and border */
+}
+
+
+.card {
+  background-color: #000000;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  flex: 1 1 calc(20% - 20px);
+  max-width: 400px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: white; /* Change background color on hover */
+  color: black; /* Change text color on hover */
+}
+
+.person-photo {
+  width: 100%;
+  height: 350px; /* Set a fixed height */
+  border-radius: 0.5rem;
+  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+  border: 3px solid #c43d1b; /* Orange border for the image */
+}
+
+.person-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.know-more {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #c43d1b;
+  color: white;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.know-more:hover {
+  background-color: #000000;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .card {
+      flex: 1 1 calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+      flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+      flex: 1 1 100%; 
+  }
+}

@@ -1,0 +1,16 @@
+.quick-links-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .quick-links, .helpline-numbers {
+    width: 30%;
+  }
+  
+  iframe{
+    width:700px;
+    height:320px;
+    border-radius:5px;
+  }
+  

@@ -1,0 +1,257 @@
+/* Base Styles */
+
+*{
+  /* color: #fff; */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Header Styles */
+.hello {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.App {
+  font-family: 'Arial', sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-radius:5px;
+}
+
+.notifications-section {
+  flex: 1;
+  color: #ffffff;
+  border: 1px solid #444;
+  padding: 10px;
+  background-color: rgb(30, 30, 30);
+  border-radius: 4px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom:20px;
+}
+
+.tabs span {
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.active-tab {
+  font-weight: bold;
+  color: #f7f2f2;
+  background-color: #c43d1b;
+  text-shadow: 0 0 10px rgb(254, 251, 251);
+}
+
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgb(30, 30, 30);
+  padding: 20px;
+  border-radius: 8px;
+  color:#fff;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #444;
+  padding: 20px;
+  width: 200px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.05);
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #c43d1b;
+}
+
+.profile-card h3 {
+  margin-top: 10px;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgb(254, 251, 251);
+}
+
+.profile-link {
+  display: block;
+  margin-top: 10px;
+  color: #d32f2f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.profile-link:hover {
+  color: #ff5252;
+}
+
+.district-info {
+  flex: 1;
+  min-width: 250px;
+  background-color: rgb(30, 30, 30);
+  padding: 20px;
+  border-radius: 8px;
+  color:#fff;
+}
+
+.district-info h2 {
+  font-weight: 700;
+  font-size: 1.3em;
+  text-shadow: 0 0 10px rgb(7, 7, 7);
+  margin-bottom: 15px;
+}
+
+.district-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.district-info li {
+  margin: 10px 0;
+  padding: 5px;
+  background-color: rgba(14, 14, 14, 0.5);
+  border-radius: 5px;
+}
+
+.view-more {
+  margin-top:10px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.view-more:hover {
+  background-color: #ff5252;
+}
+.Map-about{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  gap:20px;
+  padding:10px 20px;
+
+}
+.about-para {
+  padding: 3%;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Semi-transparent overlay */
+    url('../assets/about-vzm.jpg'); /* Your image URL */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  border-radius: 1rem;
+  color: #ffffff; /* Ensures text remains readable against the background */
+}
+
+.about-para h1{
+  font-size:20px;
+  font-weight:700;
+  font-family: sans-serif;
+  color:#c43d1b;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+.about-para p{
+  font-size:17px;
+  color:white;
+  font-family: sans-serif;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+.about-para button{
+  padding:10px 20px;
+  background-color: #c43d1b;
+  color:white;
+  font-size: 19px;
+  font-family: cursive;
+  border-radius:4px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  .notifications-section,
+  .district-info {
+    width: 100%;
+    max-width: none;
+  }
+
+  .profiles {
+    gap: 15px;
+  }
+
+  .profile-card {
+    height: min-content;
+    /* padding: 15px; */
+  }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 5px;
+  }
+
+  .tabs span {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .profiles {
+    gap: 10px;
+  }
+
+  .profile-card {
+    width: 100%;
+  }
+
+  .profile-image {
+    width: 70px;
+    height: 70px;
+  }
+}
