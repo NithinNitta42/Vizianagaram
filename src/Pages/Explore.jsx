@@ -266,6 +266,7 @@ function Explore() {
   return (
     <div className="app-container">
       <div className="hero-section">
+        <img src={R13} alt='chintappaly' className='image-section'/>
         <div className="hero-overlay">
           <div className="hero-content">
             <h1>Welcome to Vizianagaram</h1>
