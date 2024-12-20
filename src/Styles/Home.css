@@ -44,6 +44,11 @@
   border-radius: 4px;
 }
 
+.notifications-section:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
 .tabs {
   display: flex;
   gap: 8px;
@@ -62,6 +67,11 @@
   color: #f7f2f2;
   background-color: #c43d1b;
   text-shadow: 0 0 10px rgb(254, 251, 251);
+}
+.tabs span:hover {
+  background-color: #ffffff;
+  color: black;
+  text-shadow: 0 0 10px rgb(255, 255, 255);/* Change text color on hover */
 }
 
 .profiles {
@@ -144,6 +154,10 @@
   background-color: rgba(14, 14, 14, 0.5);
   border-radius: 5px;
 }
+.district-info:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
 
 .view-more {
   margin-top:10px;
@@ -203,6 +217,20 @@
   font-size: 19px;
   font-family: cursive;
   border-radius:4px;
+}
+.about-para button:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+.about-para a{
+  color:white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.about-para:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 /* Responsive Adjustments */

@@ -7,42 +7,59 @@ import Footer from "../Components/Footer/Footer.jsx";
 import Hero from "../Components/Hero/Hero.jsx";
 import Map from '../Components/MapSection/Map.jsx';
 import "../Styles/Home.css";
-function Home(){
-    const heroData = [
-        { text1: "Mana", text2: "Vizianagaram" },
-        { text1: "Thatipudi", text2: "Reservoir" },
-        { text1: "Pedda", text2: "Cheruvu" },
-      ];
-    
-      const [heroCount, setHeroCount] = useState(0);
-      const [playStatus, setPlayStatus] = useState(false);
-      const [activeTab, setActiveTab] = useState("notifications"); // Added activeTab state
-    
-      const profiles = [
-        {
-          image: cmImage,
-          name: "Sri Nara Chandrababu Naidu",
-          title: "Hon'ble Chief Minister, Andhra Pradesh",
-          alt: "Chief Minister",
-        },
-        {
-          image: collectorImage,
-          name: "Dr. B.R. Ambedkar I.A.S.",
-          title: "Collector & District Magistrate",
-          alt: "District Magistrate",
-        },
-      ];
-    
-      useEffect(() => {
-        const interval = setInterval(() => {
-          setHeroCount((count) => (count === 2 ? 0 : count + 1));
-        }, 5000);
-    
-        return () => clearInterval(interval); // Cleanup interval on unmount
-      }, []);
+
+function Home() {
+  const heroData = [
+    { text1: "Rama", text2: "Narayanam" },
+    { text1: "Thatipudi", text2: "Reservoir" },
+    { text1: "Pedda", text2: "Cheruvu" },
+  ];
+
+  const [heroCount, setHeroCount] = useState(0);
+  const [playStatus, setPlayStatus] = useState(false);
+  const [activeTab, setActiveTab] = useState("notifications");
+  const [scrolled, setScrolled] = useState(false);
+
+  const profiles = [
+    {
+      image: cmImage,
+      name: "Sri Nara Chandrababu Naidu",
+      title: "Hon'ble Chief Minister, Andhra Pradesh",
+      alt: "Chief Minister",
+    },
+    {
+      image: collectorImage,
+      name: "Dr. B.R. Ambedkar I.A.S.",
+      title: "Collector & District Magistrate",
+      alt: "District Magistrate",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroCount((count) => (count === 2 ? 0 : count + 1));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Scroll effect to apply class dynamically
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-    <div className="hello">
+      <div className={`hello ${scrolled ? "scrolled" : ""}`}>
         <Background playStatus={playStatus} heroCount={heroCount} />
         <Hero
           setPlayStatus={setPlayStatus}
@@ -81,13 +98,6 @@ function Home(){
               {activeTab === "notifications" && (
                 <ul className="notifications">
                   <p>No new updates at the moment.</p>
-                  <li>
-                    
-                  </li>
-                  <li>
-                    
-                  </li>
-                  <li></li>
                 </ul>
               )}
 
@@ -104,7 +114,7 @@ function Home(){
               )}
             </div>
 
-            <button className="view-more">View More</button>
+            
           </div>
 
           <div className="district-info">
@@ -155,15 +165,25 @@ function Home(){
         </div>
       </div>
       <div className="Map-about">
-      <Map/>
-      <div className="about-para">
-        <h1>About Vizianagaram</h1>
-        <p>Vizianagaram is a treasure trove of history and natural beauty. In the North, the majestic Bobbili Fort echoes tales of valor, while the South boasts the tranquil Pusapatirega Beach. The East is home to the ancient Ramatheertham Temples, rich in spirituality, and the West features the refreshing Kumili Waterfalls. Together, they offer a perfect blend of history, serenity, and heritage in every direction.</p>
-        <button><Link to='/about'>View More</Link></button>
-      </div>
+        <Map />
+        <div className="about-para">
+          <h1>About Vizianagaram</h1>
+          <p>
+            Vizianagaram is a treasure trove of history and natural beauty. In the North,
+            the majestic Bobbili Fort echoes tales of valor, while the South boasts the
+            tranquil Pusapatirega Beach. The East is home to the ancient Ramatheertham
+            Temples, rich in spirituality, and the West features the refreshing Kumili
+            Waterfalls. Together, they offer a perfect blend of history, serenity, and
+            heritage in every direction.
+          </p>
+          <button>
+            <Link to="/about">View More</Link>
+          </button>
+        </div>
       </div>
       <Footer />
-      </>
+    </>
   );
 }
+
 export default Home;
