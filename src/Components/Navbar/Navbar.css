@@ -1,128 +1,109 @@
-/* Base Navbar Styles */
-
+/* Navbar container */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 10px;
-    background-color: black; /* Background color changed to black */
-    color: white; /* Default text color set to white */
+    padding: 1rem 2rem;
+    background-color: #000000;
+    box-shadow: 0 2px 4px rgba(255, 255, 255);
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    font-family: "Georgia", serif; /* Unique font */
-}
-
-.nav-logo {
-    font-family: "Georgia", serif; /* Unique font */
-    font-size: 35px;
-    font-weight: 500;
-    color: white; /* Text color updated to white */
-    text-shadow: 0 0 10px rgba(255, 252, 252, 0.2);
-}
-
-.nav-menu {
+  }
+  
+  /* Logo styles */
+  .nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  /* Navigation menu */
+  .nav-menu {
     display: flex;
-    gap: 50px;
-    font-size: 25px;
-    list-style: none;
-    justify-content: space-evenly;
-    margin-right: 35px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.nav-menu a {
-    font-family: "Georgia", serif; /* Unique font */
-    font-size: 18px;
-    color: white; /* Default text color set to white */
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  /* Navigation links */
+  .nav-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff;
     text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease, text-decoration 0.3s ease;
-}
-
-.nav-menu a:hover,
-.nav-menu a:focus { /* Hover and focus state */
-    color: orangered; /* Text color changes to orange */
-    text-shadow: 2px 2px 4px black; /* Black text shadow */
-    text-decoration: none; /* Add underline */
-    transform: scale(1.1); /* Slightly enlarge on hover */
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-menu a:hover {
+    color: orangered;
+  }
+  
+  /* Icons in navigation */
+  .nav-menu svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  
+  /* Hamburger menu */
+  .hamburger-menu {
     display: none;
     flex-direction: column;
+    gap: 6px;
     cursor: pointer;
-    gap: 5px;
-    transition: transform 0.3s ease;
-}
-
-.hamburger-menu span {
+    padding: 0.5rem;
+  }
+  
+  .hamburger-menu span {
+    display: block;
     width: 25px;
-    height: 3px;
-    background-color: white; /* Set to white for better contrast */
-    border-radius: 2px;
-    transition: transform 0.7s ease, opacity 0.3s ease;
-}
-
-/* Hamburger Menu Open State (Close Icon) */
-.hamburger-menu.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-menu.open span:nth-child(2) {
-    opacity: 0; /* Hide middle bar */
-}
-
-.hamburger-menu.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  /* Mobile responsive styles */
+  @media (max-width: 768px) {
     .hamburger-menu {
-        display: flex;
+      display: flex;
     }
-
+  
     .nav-menu {
-        flex-direction: column;
-        align-items: flex-start;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: black; /* Background color changed to black */
-        padding: 20px;
-        width: 100%;
-        transform: translateY(-100%);
-        opacity: 0;
-        pointer-events: none;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 100%;
+      color: white;
+      background-color: #080808;
+      flex-direction: column;
+      justify-content: center;
+      transition: right 0.3s ease;
+      padding: 2rem;
     }
-
+  
     .nav-menu.show {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
+      right: 0;
     }
-
+  
     .nav-menu a {
-        margin: 10px 0;
-        color: white; /* Default text color set to white */
+      font-size: 1.2rem;
+      padding: 1rem;
     }
-
-    .nav-menu a:hover,
-    .nav-menu a:focus {
-        color: orange; /* Text color changes to orange */
-        text-shadow: 2px 2px 4px black; /* Black text shadow */
-        text-decoration: underline; /* Add underline */
+  
+    /* Hamburger menu animation */
+    .hamburger-menu.open span:first-child {
+      transform: rotate(45deg) translate(8px, 6px);
     }
-}
-.nav-menu i {
-    margin-right: 8px; /* Space between icon and text */
-    font-size: 20px;    /* Adjust icon size */
-    transition: color 0.3s ease; /* Smooth color transition */
-}
-
-.nav-menu a:hover i,
-.nav-menu a:focus i {
-    color: rgb(164, 54, 14);  /* Change icon color on hover/focus */
-}
+  
+    .hamburger-menu.open span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .hamburger-menu.open span:last-child {
+      transform: rotate(-45deg) translate(7px, -5px);
+    }
+  }
