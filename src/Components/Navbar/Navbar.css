@@ -90,20 +90,24 @@
     }
   
     .nav-menu a {
-      font-size: 1.2rem;
-      padding: 1rem;
+        margin: 10px 0;
+        color: white; /* Default text color set to white */
     }
-  
-    /* Hamburger menu animation */
-    .hamburger-menu.open span:first-child {
-      transform: rotate(45deg) translate(8px, 6px);
+
+    .nav-menu a:hover,
+    .nav-menu a:focus {
+        color: orange; /* Text color changes to orange */
+        text-shadow: 2px 2px 4px black; /* Black text shadow */
+        text-decoration: underline; /* Add underline */
     }
-  
-    .hamburger-menu.open span:nth-child(2) {
-      opacity: 0;
-    }
-  
-    .hamburger-menu.open span:last-child {
-      transform: rotate(-45deg) translate(7px, -5px);
-    }
-  }
+}
+.nav-menu i {
+    margin-right: 8px; /* Space between icon and text */
+    font-size: 20px;    /* Adjust icon size */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-menu a:hover i,
+.nav-menu a:focus i {
+    color: rgb(164, 54, 14);  /* Change icon color on hover/focus */
+}

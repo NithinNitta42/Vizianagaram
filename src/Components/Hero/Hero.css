@@ -1,71 +1,70 @@
-.hero{
-    position:relative;
-    top:250px;
-    left:50px;
-    width:100%;
-}
-.hero-text{
-    color: rgb(239, 243, 243);
-    text-shadow: 0 0 10px rgb(4, 4, 4);
-    font-size: 70px;
-    font-weight: 500;
-    line-height: 70px;
+.heading-container {
+  text-align: center;
+  margin: 40px 0;
 }
 
-.hero-explore{
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    width: fit-content;
-    margin-top: 70px;
-    padding: 5px 8px;
-    padding-left: 30px;
-    border-radius: 60px;
-    background-color: aliceblue;
-    cursor: pointer;
+.heading {
+  font-size: 2.5rem; /* Default for larger screens */
+  font-weight: bold;
+  background-color: #c43d1b;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-family: cursive;
 }
 
-.hero-explore p{
-    color: black;
-    font-size: 20px;
-    font-weight: 500;
+.heading::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, #000000, #000000);
+  margin: 10px auto 0;
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
 
-.hero-dot-play{
-    margin-top: 15px;
-    margin-left: 50px;
-    display: flex;
-    justify-content:space-between;
+.heading:hover::after {
+  width: 80%;
 }
 
-.hero-dots{
-    display: flex;
-    align-items: center;
-    gap:23px;
-    list-style: none;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heading-container {
+      margin: 30px 0; /* Reduce top and bottom margins */
+  }
+  
+  .heading {
+      font-size: 2rem; /* Reduce font size for tablets */
+  }
+  
+  .heading::after {
+      width: 50%; /* Adjust underline width */
+  }
+  
+  .heading:hover::after {
+      width: 70%; /* Adjust hover effect */
+  }
 }
 
-.hero-dot{
-    width: 15px;
-    height: 15px;
-    background: white;
-    border-radius: 7.5px;
-    cursor: pointer;
-    
-}
-
-.hero-dot.orange{
-    background: orangered;
-
-}
-
-.hero-play{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-right:100px;
-}
-.hero-play p{
-    color: aliceblue;
-    font-size: 19px;
+@media (max-width: 480px) {
+  .heading-container {
+      margin: 20px 0; /* Further reduce margins for smaller screens */
+  }
+  
+  .heading {
+      font-size: 1.8rem; /* Smaller font size for phones */
+  }
+  
+  .heading::after {
+      width: 40%; /* Narrow underline for small screens */
+  }
+  
+  .heading:hover::after {
+      width: 60%; /* Adjust hover effect */
+  }
 }
