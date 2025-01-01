@@ -1,17 +1,38 @@
-.background{
+/* General styling for background */
+.background {
     height: 100%;
     width: 100%;
     padding: none;
     object-fit: cover;
     z-index: -1;
-    position:absolute;
+    position: absolute;
 }
-@keyframes fadeIn{
-    from { opacity: 0;}
-    to { opacity: 1;}
 
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
-.fade-in{
+
+.fade-in {
     animation: fadeIn 500ms ease-in-out;
 }
-    
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .background {
+        object-fit: contain; /* Adjust for smaller screens */
+        height: auto;       /* Adjust height to fit content */
+    }
+}
+
+@media (max-width: 480px) {
+    .background {
+        object-fit: cover;  /* Revert to cover for very small screens */
+        height: 100%;
+    }
+}

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import cmImage from "../assets/cm.jpg";
 import collectorImage from "../assets/vzm-collector.jpeg";
 import Background from "../Components/Background/Background.jsx";
@@ -166,20 +165,6 @@ function Home() {
       </div>
       <div className="Map-about">
         <Map />
-        <div className="about-para">
-          <h1>About Vizianagaram</h1>
-          <p>
-            Vizianagaram is a treasure trove of history and natural beauty. In the North,
-            the majestic Bobbili Fort echoes tales of valor, while the South boasts the
-            tranquil Pusapatirega Beach. The East is home to the ancient Ramatheertham
-            Temples, rich in spirituality, and the West features the refreshing Kumili
-            Waterfalls. Together, they offer a perfect blend of history, serenity, and
-            heritage in every direction.
-          </p>
-          <button>
-            <Link to="/about">View More</Link>
-          </button>
-        </div>
       </div>
       <Footer />
     </>
